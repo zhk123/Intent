@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zk.intent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- Intent的相关属性用法 -->
+        <activity android:name=".Attribute.IntentAttribute"
+            android:label="Intent的相关属性用法"/>
+        <activity android:name=".Attribute.TestActivity">
+            <intent-filter>
+                <action android:name="test" />
+
+                // 注：如果没有指定的category，则必须使用默认的DEFAULT
+                // 只有“action” 和“category”中的内容同时能够匹配上Intent中指定的action和category时，这个活动才能响应Intent
+                // 如果使用的是DEFAULT这种默认的category，在稍后调用startActivity()方法的时候会自动将这个category添加到Intent中
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="myCategory" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Attribute.HttpActivity">
+            <intent-filter android:priority="-100">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                // Data属性的声明中要指定访问数据的Uri和MIME类型
+                <data
+                    android:host="www.baidu.com"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- Activity的启动模式 -->
+        <activity
+            android:name=".StartupMode.standard.FirstActivity"
+            android:label="standard(标准)默认启动模式" />
+
+        <activity
+            android:name=".StartupMode.singleTop.FirstActivity"
+            android:label="singleTop(单顶)启动模式"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".StartupMode.singleTask.FirstActivity"
+            android:label="singletask(单任务)启动模式"
+            android:launchMode="singleTask" />
+        <activity android:name=".StartupMode.singleTask.SecondActivity" />
+        <activity android:name=".StartupMode.singleTask.ThirdActivity" />
+
+        <activity android:name=".StartupMode.singleInstance.FirstActivity" />
+        <activity
+            android:name=".StartupMode.singleInstance.SecondActivity"
+            android:label="singleInstance(单实例)启动模式"
+            android:launchMode="singleInstance" />
+
+
+        <!-- Intent的常见应用 -->
+        <activity android:name=".Instance.IntentInstance"
+            android:label="Intent的常见应用"/>
+
+    </application>
+
+</manifest>

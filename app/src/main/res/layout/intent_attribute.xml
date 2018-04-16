@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.zk.intent.MainActivity">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="component（组件）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+    <Button
+        android:layout_below="@+id/btn1"
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Action（动作）和 category（类别）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+    <Button
+        android:layout_below="@+id/btn2"
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="data（数据）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+    <Button
+        android:layout_below="@+id/btn3"
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="type（数据类型）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+    <Button
+        android:layout_below="@+id/btn4"
+        android:id="@+id/btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="extras（扩展信息）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+    <Button
+        android:layout_below="@+id/btn5"
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flags（标志位）"
+        android:textAllCaps="false"
+        android:onClick="Click"/>
+
+</RelativeLayout>
